@@ -9,3 +9,5 @@ function Square(sideLength, color) {
 // DO NOT reimplement getRGB.  That should only have to be done once.
 
 module.exports = Square;
+//use two lines on top to offset character height
+//use one line on sides
