@@ -24,20 +24,20 @@ Square.prototype = {
 		return this.sideLength * 4;
 	},
 	draw: function(){
-		var picture = "";
+		var squa = "";
 		for (var i = 0; i < this.sideLength; i++){
-			picture += "-";		
+			squa+= "-";		
 		}
 		for (var j = 0; j < this.sideLength-1; j++){
-			picture += "\n|";
-			picture += " ";
-			picture += "|";
+			squa += "\n|";
+			squa += " ";
+			squa += "|";
 		}
-		picture += "\n";
+		squa += "\n";
 		for (var k = 0; k < this.sideLength; k++){
-			picture += "-";		
+			squa += "-";		
 		}
-		return picture;	
+		return squa;	
 	}
 };
 module.exports = Square;
