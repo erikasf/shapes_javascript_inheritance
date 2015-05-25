@@ -1,40 +1,30 @@
-var Shape = require("./shape");
-
-// Add the constructor for rectangle and the methods that
-// need to be overwritten.  Keep in mind that a rectangle
-// has more than just 1 side length.
-function Rectangle(sideLength, sideWidth, color) { 
-	Shape.call(this, 4, color);
-	this.sideLength = sideLength;
-	this.sideWidth = sideWidth;
+function Shape(sides, color) {
+  this.sides = sides;
+  this.color = color;
 }
-Rectangle.prototype = Object.create(Shape.prototype);
-Rectangle.prototype.constructor = Rectangle;
 
-Rectangle.prototype = {
-	area: function(){
-		return this.sideWidth * this.sideLength;
-	},
-	perimeter: function(){
-		return this.sideWidth*2 + this.sideLength*2;
-	},
-	draw: function(){
-	   var rect = "";
-	   for (var i = 0; i < this.sideWidth; i++){
-		    rect += "-";		
-	   }
-	   for (var j = 0; j < this.sideLength; j++){
-		  rect += "\n|";
-		    rect += " ";
-		    rect += "|";
-	   }
-  	    rect += "\n";
-	   for (var k = 0; k < this.sideWidth; k++){
-		   rect+= "-";		
-	   }
-	return rect;	
-}
+Shape.prototype.area = function() {
+  return 0;
 };
 
+Shape.prototype.perimeter = function() {
+  return 0;
+};
 
-module.exports = rect;
+// Should return an assci version of the shape.  Since the shape
+// doesn't make sense here, we return a string.
+Shape.prototype.draw = function() {
+   return "A shape with " + this.sides + " sides";
+};
+
+Shape.prototype.toString = function() {
+  return "[Shape sides:" + this.sides + ", color:" + this.color +" ]"
+};
+
+Shape.prototype.getRGB = function() {
+  // Return the rgb value (as a string) for the color you've selected.
+  // You can have a preset list of colors that you switch on.
+  return "rgb(0,0,0)";
+}
+
+module.exports = Shape;
