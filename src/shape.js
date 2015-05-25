@@ -3,11 +3,13 @@ function Shape(sides, color) {
   this.color = color;
 }
 
-Shape.prototype.area = function() {
+Shape.prototype.area = function(a,b) {
+  area = a*b;
   return 0;
 };
 
-Shape.prototype.perimeter = function() {
+Shape.prototype.perimeter = function(a,b) {
+  perimeter = a*a + b*b;
   return 0;
 };
 
